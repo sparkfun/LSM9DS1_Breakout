@@ -56,7 +56,7 @@
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
 <layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="50" name="dxf" color="7" fill="1" visible="no" active="no"/>
 <layer number="51" name="tDocu" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="no" active="yes"/>
@@ -1818,7 +1818,7 @@ design rules under a new name.</description>
 <attribute name="DESIGNER" value="Jim Lindblom" x="15.24" y="-10.16" size="1.778" layer="51" font="vector" ratio="15"/>
 </element>
 <element name="U1" library="LSM9DS1_temp" package="LGA24-8X4" value="LSM9DS1" x="11.43" y="11.43" rot="R90">
-<attribute name="PROD_ID" value="???" x="11.43" y="11.43" size="1.778" layer="27" font="vector" ratio="15" rot="R90" display="off"/>
+<attribute name="PROD_ID" value="IC-12536" x="11.43" y="11.43" size="1.778" layer="27" font="vector" ratio="15" rot="R90" display="off"/>
 </element>
 <element name="C2" library="SparkFun-Capacitors" package="0603-CAP" value="0.1uF" x="6.35" y="7.62" rot="R180">
 <attribute name="PROD_ID" value="CAP-00810" x="6.35" y="7.62" size="1.778" layer="27" font="vector" ratio="15" rot="R180" display="off"/>
@@ -2218,14 +2218,6 @@ design rules under a new name.</description>
 <approved hash="19,16,c825b3d1e4879e8c"/>
 <approved hash="19,16,d5cce5ab21baec9a"/>
 <approved hash="19,16,d5acfd3b39caef5a"/>
-<approved hash="19,16,27d7397b1ec6f361"/>
-<approved hash="19,16,3bb96466be3ccd1f"/>
-<approved hash="19,16,710c18e226a3bc46"/>
-<approved hash="5,16,e1e2c6b552379118"/>
-<approved hash="19,16,c8d7d674ffc91261"/>
-<approved hash="5,16,8b3f68daac925173"/>
-<approved hash="19,16,490d20efa8ae3247"/>
-<approved hash="19,16,fbb9c46ece349d1e"/>
 <approved hash="19,16,9b73970f961b9a67"/>
 <approved hash="19,16,9bcb97b797779b0b"/>
 <approved hash="19,16,be9f8aa98eb84489"/>
@@ -2243,6 +2235,33 @@ design rules under a new name.</description>
 <approved hash="19,16,07c048397f44ceba"/>
 <approved hash="19,16,e7ca0bb60b75e709"/>
 <approved hash="5,16,93e0a4213e88f47e"/>
+<approved hash="3,16,7c1f96c820c6ca11"/>
+<approved hash="19,16,27d7397b1ec6f361"/>
+<approved hash="19,16,3bb96466be3ccd1f"/>
+<approved hash="19,16,710c18e226a3bc46"/>
+<approved hash="5,16,e1e2c6b552379118"/>
+<approved hash="19,16,c8d7d674ffc91261"/>
+<approved hash="5,16,8b3f68daac925173"/>
+<approved hash="19,16,490d20efa8ae3247"/>
+<approved hash="19,16,fbb9c46ece349d1e"/>
+<approved hash="19,16,980d94719401987d"/>
+<approved hash="19,16,941795ad66aec877"/>
+<approved hash="19,16,bce0a5af21f3c530"/>
+<approved hash="19,16,bb3e91e413ecc31a"/>
+<approved hash="19,16,9e84ffb3212bbd90"/>
+<approved hash="5,16,219d7a37af682101"/>
+<approved hash="19,16,5b7ed602d6e25b9e"/>
+<approved hash="19,16,99baca8013d4bac2"/>
+<approved hash="5,16,255baf5d78592638"/>
+<approved hash="19,16,2fe036b2d8ee3c30"/>
+<approved hash="19,16,283e02f9eaf13a1a"/>
+<approved hash="5,16,48a9d67f27b1037c"/>
+<approved hash="5,16,07272185d410490d"/>
+<approved hash="19,16,01ba529fe1cb48c2"/>
+<approved hash="19,16,e5f809840967e51b"/>
+<approved hash="19,16,068467acd3344f90"/>
+<approved hash="19,16,e40c08700803e47f"/>
+<approved hash="5,16,90d8896d92d57498"/>
 </errors>
 </board>
 </drawing>
