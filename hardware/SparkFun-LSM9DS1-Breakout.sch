@@ -18727,6 +18727,7 @@ Open: Removes 10k pull-ups. SPI mode or
 Table</text>
 <text x="2.54" y="180.34" size="2.54" layer="94">LSM9DS1</text>
 <text x="2.54" y="93.98" size="2.54" layer="94">Headers</text>
+<text x="38.1" y="81.28" size="2.54" layer="97">VDD Range: 1.9-3.6V</text>
 </plain>
 <instances>
 <instance part="FRAME1" gate="G$1" x="0" y="0"/>
