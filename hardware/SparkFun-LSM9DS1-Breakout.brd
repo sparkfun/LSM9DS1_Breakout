@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.001" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -223,9 +223,9 @@ Breakout</text>
 <text x="14.859" y="6.35" size="0.8128" layer="22" font="vector" ratio="15" rot="MR270" align="bottom-center">SDO</text>
 <text x="15.621" y="10.033" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">M</text>
 <text x="17.399" y="10.033" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">AG</text>
-<text x="12.954" y="2.667" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">I</text>
-<text x="10.795" y="2.667" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">C PU</text>
-<text x="12.5095" y="3.2385" size="0.635" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">2</text>
+<text x="12.9286" y="2.7178" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">I</text>
+<text x="10.7696" y="2.7178" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">C PU</text>
+<text x="12.4841" y="3.2893" size="0.635" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">2</text>
 <text x="13.0556" y="17.9324" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="center">SDO
 0
 1</text>
@@ -265,6 +265,19 @@ Address</text>
 <dimension x1="6.35" y1="20.32" x2="8.001" y2="20.32" x3="7.1755" y3="24.13" textsize="0.889" textratio="15" layer="47" unit="inch" precision="3"/>
 <wire x1="16.51" y1="10.922" x2="16.51" y2="9.906" width="0.1524" layer="22"/>
 <wire x1="16.51" y1="7.874" x2="16.51" y2="7.366" width="0.1524" layer="22"/>
+<text x="1.5494" y="20.193" size="1.016" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">X</text>
+<text x="4.953" y="17.5768" size="1.016" layer="22" font="vector" ratio="15" rot="MR180" align="bottom-center">Y</text>
+<text x="3.556" y="18.8976" size="1.016" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">Z</text>
+<wire x1="1.651" y1="17.018" x2="4.572" y2="17.018" width="0.254" layer="22"/>
+<wire x1="1.651" y1="17.018" x2="1.651" y2="20.066" width="0.254" layer="22"/>
+<wire x1="4.572" y1="17.018" x2="4.191" y2="17.399" width="0.254" layer="22"/>
+<wire x1="4.191" y1="17.399" x2="4.191" y2="16.637" width="0.254" layer="22"/>
+<wire x1="4.191" y1="16.637" x2="4.572" y2="17.018" width="0.254" layer="22"/>
+<wire x1="2.032" y1="19.685" x2="1.651" y2="20.066" width="0.254" layer="22"/>
+<wire x1="1.27" y1="19.685" x2="2.032" y2="19.685" width="0.254" layer="22"/>
+<wire x1="1.651" y1="20.066" x2="1.27" y2="19.685" width="0.254" layer="22"/>
+<wire x1="2.6924" y1="18.796" x2="3.2004" y2="18.288" width="0.2032" layer="22"/>
+<wire x1="2.6924" y1="18.288" x2="3.2004" y2="18.796" width="0.2032" layer="22"/>
 </plain>
 <libraries>
 <library name="SparkFun-Aesthetics">
@@ -1829,7 +1842,7 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="FRAME1" library="SparkFun-Aesthetics" package="CREATIVE_COMMONS" value="" x="-15.24" y="-22.86" smashed="yes">
-<attribute name="VERSION" value="v10" x="0.508" y="0.508" size="0.889" layer="16" font="vector" ratio="15"/>
+<attribute name="VERSION" value="v10" x="2.794" y="0.508" size="0.889" layer="16" font="vector" ratio="15" rot="MR0"/>
 <attribute name="DESIGNER" value="Jim Lindblom" x="15.24" y="-22.86" size="1.778" layer="51" font="vector" ratio="15"/>
 </element>
 <element name="U1" library="LSM9DS1_temp" package="LGA24-8X4" value="LSM9DS1" x="11.43" y="11.43" rot="R90">
@@ -1938,6 +1951,8 @@ design rules under a new name.</description>
 <wire x1="8.655" y1="12.935" x2="7.62" y2="13.97" width="0.2032" layer="1"/>
 <wire x1="7.62" y1="13.97" x2="6.35" y2="13.97" width="0.2032" layer="1"/>
 <wire x1="10.205" y1="12.505" x2="9.085" y2="12.505" width="0.2032" layer="1"/>
+<via x="8.636" y="4.826" extent="1-16" drill="0.508"/>
+<via x="3.81" y="10.16" extent="1-16" drill="0.508"/>
 </signal>
 <signal name="VDD">
 <contactref element="U1" pad="22"/>
@@ -2257,6 +2272,7 @@ design rules under a new name.</description>
 <approved hash="19,16,941795ad66aec877"/>
 <approved hash="19,16,5b7ed602d6e25b9e"/>
 <approved hash="3,16,7c1f96c820c6ca11"/>
+<approved hash="3,16,1c3a37ed81e2aa35"/>
 <approved hash="19,16,27d7397b1ec6f361"/>
 <approved hash="19,16,3bb96466be3ccd1f"/>
 <approved hash="19,16,710c18e226a3bc46"/>
