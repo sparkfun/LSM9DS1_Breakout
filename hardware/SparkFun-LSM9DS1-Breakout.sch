@@ -18637,6 +18637,7 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 <parts>
 <part name="FRAME1" library="SparkFun-Aesthetics" deviceset="FRAME-LETTER" device="">
 <attribute name="DESIGNER" value="Jim Lindblom"/>
+<attribute name="VERSION" value="v10"/>
 </part>
 <part name="U1" library="LSM9DS1_temp" deviceset="LSM9DS1" device=""/>
 <part name="C2" library="SparkFun-Capacitors" deviceset="0.1UF-25V(+80/-20%)(0603)" device="" value="0.1uF"/>
@@ -18704,8 +18705,8 @@ This is the mechanical footprint for a #4 phillips button head screw. Use the ke
 <wire x1="218.44" y1="175.26" x2="218.44" y2="163.322" width="0.2032" layer="97"/>
 <text x="208.026" y="167.132" size="2.54" layer="97" align="center">0x6A
 0x6B</text>
-<text x="208.28" y="180.34" size="2.032" layer="97" align="center">Set the SDO_G and SDO_XM to set the
-gyro and accel/mag I2C addresses:</text>
+<text x="208.28" y="180.34" size="2.032" layer="97" align="center">Set the SDO_AG and SDO_M to set the
+accel/gryo and mag I2C addresses:</text>
 <text x="165.1" y="139.7" size="1.778" layer="97">SJ1 pulls up the chip-select (CS) pins.
 Closed: Sets LSM9DS1 to I2C mode.
 Open: Allows for CS control in SPI mode.</text>

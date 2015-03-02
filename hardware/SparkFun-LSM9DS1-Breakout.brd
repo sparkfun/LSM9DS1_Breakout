@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.0025" altunitdist="inch" altunit="inch"/>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.005" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -199,7 +199,7 @@ AG</text>
 <wire x1="10.299653125" y1="20.469984375" x2="10.24095" y2="20.072690625" width="0.254" layer="21"/>
 <wire x1="10.24095" y1="20.072690625" x2="10.7017125" y2="20.267678125" width="0.254" layer="21"/>
 <wire x1="10.7017125" y1="20.267678125" x2="10.299653125" y2="20.469984375" width="0.254" layer="21"/>
-<text x="20.574" y="11.43" size="0.8128" layer="21" font="vector" ratio="15" align="center-right">RDY</text>
+<text x="20.701" y="11.43" size="0.8128" layer="21" font="vector" ratio="15" align="center-right">RDY</text>
 <text x="2.286" y="13.97" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="center-right">GND</text>
 <text x="2.286" y="11.43" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="center-right">1.9-3.6V</text>
 <text x="2.286" y="8.89" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="center-right">SDA</text>
@@ -217,15 +217,15 @@ M</text>
 <text x="20.447" y="1.27" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="center-left">SDO
 AG</text>
 <text x="20.447" y="11.43" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="center-left">RDY</text>
-<text x="15.24" y="13.335" size="0.889" layer="22" font="vector" ratio="15" rot="MR0" align="top-left">LSM9DS1
+<text x="11.43" y="13.462" size="0.889" layer="22" font="vector" ratio="15" rot="MR0" align="top-center">LSM9DS1
 Breakout</text>
 <text x="14.859" y="8.89" size="0.8128" layer="22" font="vector" ratio="15" rot="MR270" align="bottom-center">CS</text>
 <text x="14.859" y="6.35" size="0.8128" layer="22" font="vector" ratio="15" rot="MR270" align="bottom-center">SDO</text>
-<text x="15.494" y="10.033" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">M</text>
-<text x="17.272" y="10.033" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">AG</text>
-<text x="9.398" y="4.699" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">I</text>
-<text x="7.239" y="4.699" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">C PU</text>
-<text x="8.9535" y="5.2705" size="0.635" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">2</text>
+<text x="15.621" y="10.033" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">M</text>
+<text x="17.399" y="10.033" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">AG</text>
+<text x="12.954" y="2.667" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">I</text>
+<text x="10.795" y="2.667" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">C PU</text>
+<text x="12.5095" y="3.2385" size="0.635" layer="22" font="vector" ratio="15" rot="MR0" align="bottom-center">2</text>
 <text x="13.0556" y="17.9324" size="0.8128" layer="22" font="vector" ratio="15" rot="MR0" align="center">SDO
 0
 1</text>
@@ -263,6 +263,8 @@ Address</text>
 <text x="-12.7" y="-10.16" size="0.889" layer="47" font="vector" ratio="15">Units in inches</text>
 <dimension x1="1.27" y1="8.89" x2="1.27" y2="0" x3="-8.89" y3="4.445" textsize="0.889" textratio="15" layer="47" unit="inch"/>
 <dimension x1="6.35" y1="20.32" x2="8.001" y2="20.32" x3="7.1755" y3="24.13" textsize="0.889" textratio="15" layer="47" unit="inch" precision="3"/>
+<wire x1="16.51" y1="10.922" x2="16.51" y2="9.906" width="0.1524" layer="22"/>
+<wire x1="16.51" y1="7.874" x2="16.51" y2="7.366" width="0.1524" layer="22"/>
 </plain>
 <libraries>
 <library name="SparkFun-Aesthetics">
@@ -1827,7 +1829,7 @@ design rules under a new name.</description>
 </autorouter>
 <elements>
 <element name="FRAME1" library="SparkFun-Aesthetics" package="CREATIVE_COMMONS" value="" x="-15.24" y="-22.86" smashed="yes">
-<attribute name="VERSION" value="v01" x="0.508" y="0.508" size="0.889" layer="16" font="vector" ratio="15"/>
+<attribute name="VERSION" value="v10" x="0.508" y="0.508" size="0.889" layer="16" font="vector" ratio="15"/>
 <attribute name="DESIGNER" value="Jim Lindblom" x="15.24" y="-22.86" size="1.778" layer="51" font="vector" ratio="15"/>
 </element>
 <element name="U1" library="LSM9DS1_temp" package="LGA24-8X4" value="LSM9DS1" x="11.43" y="11.43" rot="R90">
@@ -1877,7 +1879,7 @@ design rules under a new name.</description>
 <element name="FID2" library="SparkFun-Aesthetics" package="FIDUCIAL-1X2" value="FIDUCIAL1X2" x="1.27" y="21.59" rot="R270"/>
 <element name="SJ3" library="SparkFun-Passives" package="PAD-JUMPER-3-3OF3_NC_BY_TRACE_YES_SILK_FULL_BOX" value="" x="11.43" y="5.08" rot="MR0"/>
 <element name="JP2" library="SparkFun-Connectors" package="1X09_NO_SILK" value="M09NO_SILK" x="21.59" y="1.27" rot="R90"/>
-<element name="LOGO1" library="SparkFun-Aesthetics" package="SFE_LOGO_NAME_.1" value="SFE_LOGO_NAME.1_INCH" x="17.78" y="12.319" rot="MR0"/>
+<element name="LOGO1" library="SparkFun-Aesthetics" package="SFE_LOGO_NAME_.1" value="SFE_LOGO_NAME.1_INCH" x="17.399" y="12.446" rot="MR0"/>
 <element name="LOGO2" library="SparkFun-Aesthetics" package="SFE_LOGO_FLAME_.2" value="SFE_LOGO_FLAME.2_INCH" x="0.381" y="15.621"/>
 <element name="LOGO3" library="SparkFun-Aesthetics" package="OSHW-LOGO-S" value="OSHW-LOGOS" x="2.159" y="2.54"/>
 </elements>
