@@ -26,6 +26,7 @@ Product Versions
 
 Version History
 ---------------
+* [V_1.0.0](https://github.com/sparkfun/LSM9DS1_Breakout/releases/tag/V_1.0.0) - Initial product release repository
 
 License Information
 -------------------
