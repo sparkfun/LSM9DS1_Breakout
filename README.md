@@ -1,4 +1,4 @@
-SparkFun <PRODUCT NAME>
+SparkFun LSM9DS1 Breakout
 ========================================
 
 ![LSM9DS1 Breakout](https://cdn.sparkfun.com//assets/parts/1/0/5/3/3/13284-02.jpg)
