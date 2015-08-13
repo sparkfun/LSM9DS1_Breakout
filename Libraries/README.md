@@ -6,7 +6,8 @@ Libraries for use in different environments.
 
 Directory Contents
 -------------------
-* **/Arduino** - [Arduino IDE](http://www.arduino.cc/en/Main/Software) libraries
+* **/Arduino** - [Arduino IDE](http://www.arduino.cc/en/Main/Software) library
+* **/Particle** - [Particle IDE](http://build.particle.io) library (for the Photon and Core)
 
 
 Update Library Instructions:
