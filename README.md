@@ -19,6 +19,7 @@ Documentation
 --------------
 * **[Library](https://github.com/sparkfun/SparkFun_LSM9DS1_Arduino_Library)** - Arduino library for the LSM9DS1 Breakout.
 * **[Hookup Guide](https://learn.sparkfun.com/tutorials/lsm9ds1-breakout-hookup-guide)** - Basic hookup guide for the LSM9DS1 Breakout.
+* **[SparkFun Fritzing repo](https://github.com/sparkfun/Fritzing_Parts)** - Fritzing diagrams for SparkFun products. This part can be found in the products folder.
 
 Product Versions
 ----------------
