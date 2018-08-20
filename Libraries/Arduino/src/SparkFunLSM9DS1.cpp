@@ -549,8 +549,11 @@ int16_t LSM9DS1::readMag(lsm9ds1_axis axis)
 void LSM9DS1::readTemp()
 {
 	uint8_t temp[2]; // We'll read two bytes from the temperature sensor into temp	
-	xgReadBytes(OUT_TEMP_L, temp, 2); // Read 2 bytes, beginning at OUT_TEMP_L
-	temperature = ((int16_t)temp[1] << 8) | temp[0];
+	if ( xgReadBytes(OUT_TEMP_L, temp, 2) == 2 ) // Read 2 bytes, beginning at OUT_TEMP_L
+	{
+		int16_t offset = 25  // Per datasheet sensor outputs 0 typically @ 25 degrees centigrade
+		temperature = offset + ((((int16_t)temp[1] << 8) | temp[0]) >> 8) ;
+	}
 }
 
 void LSM9DS1::readGyro()
