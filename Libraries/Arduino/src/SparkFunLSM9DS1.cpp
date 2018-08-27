@@ -553,7 +553,6 @@ void LSM9DS1::readTemp()
 	
 	int16_t offset = 25;  // Per datasheet sensor outputs 0 typically @ 25 degrees centigrade
 	temperature = offset + ((((int16_t)temp[1] << 8) | temp[0]) >> 8) ;
-	
 }
 
 void LSM9DS1::readGyro()
