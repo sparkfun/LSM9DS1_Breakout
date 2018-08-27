@@ -549,11 +549,11 @@ int16_t LSM9DS1::readMag(lsm9ds1_axis axis)
 void LSM9DS1::readTemp()
 {
 	uint8_t temp[2]; // We'll read two bytes from the temperature sensor into temp	
-	if ( xgReadBytes(OUT_TEMP_L, temp, 2) == 2 ) // Read 2 bytes, beginning at OUT_TEMP_L
-	{
-		int16_t offset = 25  // Per datasheet sensor outputs 0 typically @ 25 degrees centigrade
-		temperature = offset + ((((int16_t)temp[1] << 8) | temp[0]) >> 8) ;
-	}
+	xgReadBytes(OUT_TEMP_L, temp, 2);// Read 2 bytes, beginning at OUT_TEMP_L
+	
+	int16_t offset = 25;  // Per datasheet sensor outputs 0 typically @ 25 degrees centigrade
+	temperature = offset + ((((int16_t)temp[1] << 8) | temp[0]) >> 8) ;
+	
 }
 
 void LSM9DS1::readGyro()
@@ -1001,6 +1001,7 @@ uint8_t LSM9DS1::xgReadByte(uint8_t subAddress)
 		return I2CreadByte(_xgAddress, subAddress);
 	else if (settings.device.commInterface == IMU_MODE_SPI)
 		return SPIreadByte(_xgAddress, subAddress);
+	return -1;
 }
 
 void LSM9DS1::xgReadBytes(uint8_t subAddress, uint8_t * dest, uint8_t count)
@@ -1011,6 +1012,7 @@ void LSM9DS1::xgReadBytes(uint8_t subAddress, uint8_t * dest, uint8_t count)
 		I2CreadBytes(_xgAddress, subAddress, dest, count);
 	else if (settings.device.commInterface == IMU_MODE_SPI)
 		SPIreadBytes(_xgAddress, subAddress, dest, count);
+	return -1;
 }
 
 uint8_t LSM9DS1::mReadByte(uint8_t subAddress)
@@ -1021,6 +1023,7 @@ uint8_t LSM9DS1::mReadByte(uint8_t subAddress)
 		return I2CreadByte(_mAddress, subAddress);
 	else if (settings.device.commInterface == IMU_MODE_SPI)
 		return SPIreadByte(_mAddress, subAddress);
+	return -1;
 }
 
 void LSM9DS1::mReadBytes(uint8_t subAddress, uint8_t * dest, uint8_t count)
@@ -1031,6 +1034,7 @@ void LSM9DS1::mReadBytes(uint8_t subAddress, uint8_t * dest, uint8_t count)
 		I2CreadBytes(_mAddress, subAddress, dest, count);
 	else if (settings.device.commInterface == IMU_MODE_SPI)
 		SPIreadBytes(_mAddress, subAddress, dest, count);
+	return -1;
 }
 
 void LSM9DS1::initSPI()
@@ -1113,8 +1117,6 @@ uint8_t LSM9DS1::I2CreadByte(uint8_t address, uint8_t subAddress)
 	Wire.write(subAddress);	                 // Put slave register address in Tx buffer
 	Wire.endTransmission(true);             // Send the Tx buffer, but send a restart to keep connection alive
 	Wire.requestFrom(address, (uint8_t) 1);  // Read one byte from slave register address 
-	while ((Wire.available() < 1) && (timeout-- > 0))
-		delay(1);
 	
 	if (timeout <= 0)
 		return 255;	//! Bad! 255 will be misinterpreted as a good value.
@@ -1133,8 +1135,7 @@ uint8_t LSM9DS1::I2CreadBytes(uint8_t address, uint8_t subAddress, uint8_t * des
 	Wire.endTransmission(true);             // Send the Tx buffer, but send a restart to keep connection alive
 	uint8_t i = 0;
 	Wire.requestFrom(address, count);  // Read bytes from slave register address 
-	while ((Wire.available() < count) && (timeout-- > 0))
-		delay(1);
+
 	if (timeout <= 0)
 		return -1;
 	
