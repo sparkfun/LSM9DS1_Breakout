@@ -24,6 +24,7 @@ Distributed as-is; no warranty is given.
 #include "SparkFunLSM9DS1.h"
 #include "LSM9DS1_Registers.h"
 #include "LSM9DS1_Types.h"
+#include <cstdint>
 #include <Wire.h> // Wire library is used for I2C
 #include <SPI.h>  // SPI library is used for...SPI.
 
@@ -325,7 +326,6 @@ void LSM9DS1::initAccel()
 // is good practice.
 void LSM9DS1::calibrate(bool autoCalc)
 {  
-	uint8_t data[6] = {0, 0, 0, 0, 0, 0};
 	uint8_t samples = 0;
 	int ii;
 	int32_t aBiasRawTemp[3] = {0, 0, 0};
@@ -519,7 +519,7 @@ void LSM9DS1::readAccel()
 
 int16_t LSM9DS1::readAccel(lsm9ds1_axis axis)
 {
-	uint8_t temp[2];
+	uint8_t temp[2] = {};
 	int16_t value;
 	xgReadBytes(OUT_X_L_XL + (2 * axis), temp, 2);
 	value = (temp[1] << 8) | temp[0];
@@ -541,14 +541,14 @@ void LSM9DS1::readMag()
 
 int16_t LSM9DS1::readMag(lsm9ds1_axis axis)
 {
-	uint8_t temp[2];
+	uint8_t temp[2] = {};
 	mReadBytes(OUT_X_L_M + (2 * axis), temp, 2);
 	return (temp[1] << 8) | temp[0];
 }
 
 void LSM9DS1::readTemp()
 {
-	uint8_t temp[2]; // We'll read two bytes from the temperature sensor into temp	
+	uint8_t temp[2] = {}; // We'll read two bytes from the temperature sensor into temp	
 	xgReadBytes(OUT_TEMP_L, temp, 2);// Read 2 bytes, beginning at OUT_TEMP_L
 	
 	int16_t offset = 25;  // Per datasheet sensor outputs 0 typically @ 25 degrees centigrade
@@ -572,7 +572,7 @@ void LSM9DS1::readGyro()
 
 int16_t LSM9DS1::readGyro(lsm9ds1_axis axis)
 {
-	uint8_t temp[2];
+	uint8_t temp[2] = {};
 	int16_t value;
 	
 	xgReadBytes(OUT_X_L_G + (2 * axis), temp, 2);
@@ -987,9 +987,9 @@ void LSM9DS1::mWriteByte(uint8_t subAddress, uint8_t data)
 	// Whether we're using I2C or SPI, write a byte using the
 	// accelerometer-specific I2C address or SPI CS pin.
 	if (settings.device.commInterface == IMU_MODE_I2C)
-		return I2CwriteByte(_mAddress, subAddress, data);
+		I2CwriteByte(_mAddress, subAddress, data);
 	else if (settings.device.commInterface == IMU_MODE_SPI)
-		return SPIwriteByte(_mAddress, subAddress, data);
+		SPIwriteByte(_mAddress, subAddress, data);
 }
 
 uint8_t LSM9DS1::xgReadByte(uint8_t subAddress)
@@ -1000,7 +1000,7 @@ uint8_t LSM9DS1::xgReadByte(uint8_t subAddress)
 		return I2CreadByte(_xgAddress, subAddress);
 	else if (settings.device.commInterface == IMU_MODE_SPI)
 		return SPIreadByte(_xgAddress, subAddress);
-	return -1;
+	return 0;
 }
 
 void LSM9DS1::xgReadBytes(uint8_t subAddress, uint8_t * dest, uint8_t count)
@@ -1011,7 +1011,6 @@ void LSM9DS1::xgReadBytes(uint8_t subAddress, uint8_t * dest, uint8_t count)
 		I2CreadBytes(_xgAddress, subAddress, dest, count);
 	else if (settings.device.commInterface == IMU_MODE_SPI)
 		SPIreadBytes(_xgAddress, subAddress, dest, count);
-	return -1;
 }
 
 uint8_t LSM9DS1::mReadByte(uint8_t subAddress)
@@ -1022,7 +1021,7 @@ uint8_t LSM9DS1::mReadByte(uint8_t subAddress)
 		return I2CreadByte(_mAddress, subAddress);
 	else if (settings.device.commInterface == IMU_MODE_SPI)
 		return SPIreadByte(_mAddress, subAddress);
-	return -1;
+	return 0;
 }
 
 void LSM9DS1::mReadBytes(uint8_t subAddress, uint8_t * dest, uint8_t count)
@@ -1033,7 +1032,6 @@ void LSM9DS1::mReadBytes(uint8_t subAddress, uint8_t * dest, uint8_t count)
 		I2CreadBytes(_mAddress, subAddress, dest, count);
 	else if (settings.device.commInterface == IMU_MODE_SPI)
 		SPIreadBytes(_mAddress, subAddress, dest, count);
-	return -1;
 }
 
 void LSM9DS1::initSPI()
@@ -1132,7 +1130,6 @@ uint8_t LSM9DS1::I2CreadBytes(uint8_t address, uint8_t subAddress, uint8_t * des
 	Wire.write(subAddress | 0x80);     // Put slave register address in Tx buffer
 
 	Wire.endTransmission(true);             // Send the Tx buffer, but send a restart to keep connection alive
-	uint8_t i = 0;
 	Wire.requestFrom(address, count);  // Read bytes from slave register address 
 
 	if (timeout <= 0)
